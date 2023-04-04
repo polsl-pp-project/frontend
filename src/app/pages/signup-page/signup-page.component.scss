@@ -1,48 +1,34 @@
-:host {
-    padding-top: 5em;
-    padding-bottom: 5em;
+#box {
+    
+}
+
+h2 {
+    font-size: 4em;
+    margin-bottom: 40px;
 }
 
 label {
-    font-size: 1.25em;
+    font-size: 1em;
+    font-weight: 300;
 }
 
-input {
-    background-color: #000e1c;
-    border: 2px solid #0c74f3;
+#inputs {
+
+    border: 1px solid rgba(0,0,0,0.2);
     border-radius: 10px;
     width: 100%;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.5em;
 }
 
-select {
-    background-color: #000e1c;
-    border: 2px solid #0c74f3;
-    border-radius: 10px;
-    width: 100%;
-    height: 36px;
-}
-
-input[type="checkbox"] {
-    width: auto;
-}
 
 .signupButton {
-    border: 2px solid #0c74f3;
-    background-color: #0c74f3;
+    border: 2px solid #090909;
+    background-color: rgb(16, 2, 50);
     border-radius: 10px;
-    margin-top: 4em;
+    margin-top: 1em;
+    margin-bottom: 5em;
     padding: 5px 10px;
-
-    &:disabled {
-        background-color: #6d6d6d;
-        border-color: #6d6d6d;
-        cursor: not-allowed;
-    }
+    color: white
 }
 
-.goToLogin {
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-}
+
