@@ -1,0 +1,39 @@
+:host {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+input {
+    background-color: #000E1C;
+    border: 2px solid #0C74F3;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+label {
+    margin-top: 7px;
+    font-size: 20px;
+}
+
+h1 {
+    padding-top: 50px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.reset {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.loginButton {
+    border: 2px solid #0C74F3;
+    background-color: #0C74F3;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
