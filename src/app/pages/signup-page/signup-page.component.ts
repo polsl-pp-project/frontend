@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth-service/auth.service';
 
 @Component({
   selector: 'app-signup-page',
@@ -6,5 +9,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup-page.component.scss']
 })
 export class SignupPageComponent {
+  submitted = false;
 
+  constructor(private authService: AuthService,
+    private fb: FormBuilder) { }
+
+  get f(): {
+    [key: string]: AbstractControl;
+  } { return this.form.controls; }
+
+  form: FormGroup = this.fb.group({
+    name: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    passwordConfirm: ['', [Validators.required, Validators.minLength(6)]]
+  });
+
+  signup() {
+    this.submitted = true;
+
+    if(this.form.valid) {
+      let user: User = this.form.getRawValue();
+      this.authService.signup(user).subscribe((response) => {
+        console.log(response);
+      })
+    }
+  }
 }
