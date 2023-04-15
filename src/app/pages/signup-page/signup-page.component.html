@@ -1,56 +1,74 @@
-<i class="bi bi-person-fill"></i>
+<div class="row text-center mt-5 mb-5">
+    <h1>Zarejestruj się</h1>
+</div>
+
+<div class="container">
+    <div class="col-6">
 <form class="needs-validation" [formGroup]="form">
+    
     <div class="d-flex flex-row align-items-center">
         <div class="form-floating mb-3 flex-fill large">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="name"
                 [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
             <label for="nameInput">Imię</label>
             <div class="invalid-feedback">
-                Pole "Imię" nie może być puste
+                Pole nie może być puste
             </div>
         </div>
     </div>
+   
     <div class="d-flex flex-row align-items-center">
         <div class="form-floating mb-3 flex-fill">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="lastName"
                 [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
             <label for="nameInput">Nazwisko</label>
             <div class="invalid-feedback">
-                Pole "Imię" nie może być puste
+                Pole nie może być puste
             </div>
         </div>
     </div>
+    
     <div class="d-flex flex-row align-items-center">
         <div class="form-floating mb-3 flex-fill large">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="email"
                 [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
             <label for="nameInput">Email</label>
             <div class="invalid-feedback">
-                Pole "Imię" nie może być puste
+                Pole nie może być puste
             </div>
         </div>
     </div>
+    
     <div class="d-flex flex-row align-items-center">
         <div class="form-floating mb-3 flex-fill">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="password"
                 [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
             <label for="nameInput">Hasło</label>
             <div class="invalid-feedback">
-                Pole "Imię" nie może być puste
+                Pole nie może być puste
             </div>
         </div>
     </div>
+   
     <div class="d-flex flex-row align-items-center">
         <div class="form-floating mb-3 flex-fill">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="passwordConfirm"
                 [ngClass]="{ 'is-invalid': submitted && f['passwordConfirm'].errors }">
             <label for="nameInput">Potwierdź hasło</label>
             <div class="invalid-feedback">
-                Pole "Imię" nie może być puste
+                Pole nie może być puste
             </div>
         </div>
     </div>
+
+
     <div class="example-button-row">
         <button type="submit" mat-button color="primary" (click)="signup()">Primary</button>
     </div>
 </form>
+</div>
+<div class="col-6">
+
+    
+</div>
+</div>
