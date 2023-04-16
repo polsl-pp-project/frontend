@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+html, body { height: 100%}
+
+
+* {
+  font-family: 'Roboto-Light' !important;
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('assets/Roboto-Light.ttf');
+}
+
+
+
