@@ -5,57 +5,73 @@
         <h1 class="text-center mb-4">Rejestracja</h1>
 <form class="needs-validation" [formGroup]="form">
     
-    <div class="d-flex flex-row align-items-center">
-        <div class="form-floating mb-3 flex-fill large">
+    <div class="input-group d-flex flex-row align-items-center">
+        <span class="input-group-text mb-3" style="height:58px"><i class="bi bi-person-fill"></i></span>
+        <div class="form-floating mb-3 flex-fill large is-invalid">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="name"
                 [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
             <label for="nameInput">Imię</label>
-            <div class="invalid-feedback">
-                Pole nie może być puste
+            <div>
+                <div class="invalid-feedback">
+                    Pole nie może być puste
+                </div>
             </div>
         </div>
     </div>
    
-    <div class="d-flex flex-row align-items-center">
+    <div class="input-group d-flex flex-row align-items-center">
+        <span class="input-group-text mb-3" style="height:58px"><i class="bi bi-person-fill"></i></span>
         <div class="form-floating mb-3 flex-fill">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="lastName"
                 [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
             <label for="nameInput">Nazwisko</label>
-            <div class="invalid-feedback">
-                Pole nie może być puste
+            <div>
+                <div class="invalid-feedback">
+                    Pole nie może być puste
+                </div>
             </div>
         </div>
     </div>
     
-    <div class="d-flex flex-row align-items-center">
+    <div class="input-group align-items-center">
+        <span class="input-group-text mb-3" style="height:58px"><i class="bi bi-envelope-fill"></i></span>
         <div class="form-floating mb-3 flex-fill">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="email"
                 [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
             <label for="nameInput">Email</label>
-            <div class="invalid-feedback">
-                Pole nie może być puste
-            </div>
+            <div>
+                <div class="invalid-feedback">
+                    Pole nie może być puste
+                </div>
+                </div>
         </div>
     </div>
     
-    <div class="d-flex flex-row align-items-center">
+    <div class="input-group d-flex flex-row align-items-center">
+        <span class="input-group-text mb-3" style="height:58px"><i class="bi bi-key-fill"></i></span>
         <div class="form-floating mb-3 flex-fill">
             <input type="password" class="form-control" id="nameInput" placeholder="Imię" formControlName="password"
                 [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
             <label for="nameInput">Hasło</label>
-            <div class="invalid-feedback">
-                Pole nie może być puste
-            </div>
+            <div>
+                <div class="invalid-feedback">
+                    Pole nie może być puste
+                </div>
+                </div>
         </div>
     </div>
+    
    
-    <div class="d-flex flex-row align-items-center">
+    <div class="input-group d-flex flex-row align-items-center">
+        <span class="input-group-text mb-3" style="height:58px"><i class="bi bi-key-fill"></i></span>
         <div class="form-floating mb-3 flex-fill">
             <input type="password" class="form-control" id="nameInput" placeholder="Imię" formControlName="passwordConfirm"
                 [ngClass]="{ 'is-invalid': submitted && f['passwordConfirm'].errors }">
             <label for="nameInput">Potwierdź hasło</label>
+            <div>
             <div class="invalid-feedback">
                 Pole nie może być puste
+            </div>
             </div>
         </div>
     </div>
