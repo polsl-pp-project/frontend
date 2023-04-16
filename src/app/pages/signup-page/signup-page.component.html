@@ -1,9 +1,8 @@
-<div class="row text-center mt-5 mb-5">
-    <h1>Zarejestruj się</h1>
-</div>
 
-<div class="container">
-    <div class="col-6">
+
+<div class="container shadow p-5 mb-5 bg-white rounded" style="margin-top: 30px">
+    
+        <h1 class="text-center mb-4">Rejestracja</h1>
 <form class="needs-validation" [formGroup]="form">
     
     <div class="d-flex flex-row align-items-center">
@@ -29,7 +28,7 @@
     </div>
     
     <div class="d-flex flex-row align-items-center">
-        <div class="form-floating mb-3 flex-fill large">
+        <div class="form-floating mb-3 flex-fill">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="email"
                 [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
             <label for="nameInput">Email</label>
@@ -41,7 +40,7 @@
     
     <div class="d-flex flex-row align-items-center">
         <div class="form-floating mb-3 flex-fill">
-            <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="password"
+            <input type="password" class="form-control" id="nameInput" placeholder="Imię" formControlName="password"
                 [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
             <label for="nameInput">Hasło</label>
             <div class="invalid-feedback">
@@ -52,7 +51,7 @@
    
     <div class="d-flex flex-row align-items-center">
         <div class="form-floating mb-3 flex-fill">
-            <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="passwordConfirm"
+            <input type="password" class="form-control" id="nameInput" placeholder="Imię" formControlName="passwordConfirm"
                 [ngClass]="{ 'is-invalid': submitted && f['passwordConfirm'].errors }">
             <label for="nameInput">Potwierdź hasło</label>
             <div class="invalid-feedback">
@@ -62,13 +61,8 @@
     </div>
 
 
-    <div class="example-button-row">
-        <button type="submit" mat-button color="primary" (click)="signup()">Primary</button>
-    </div>
-</form>
-</div>
-<div class="col-6">
-
     
-</div>
+        <button type="submit" class="SignUpButton"     (click)="signup()">Utwórz konto</button>
+    
+</form>
 </div>
