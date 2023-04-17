@@ -78,7 +78,7 @@
 
 
     
-        <button type="submit" class="SignUpButton"     (click)="signup()">Utwórz konto</button>
+        <button type="submit" class="SignUpButton" (click)="signup()" [disabled]="!form.valid">Utwórz konto</button>
     
 </form>
 </div>
