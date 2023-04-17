@@ -2,8 +2,8 @@
 
 <div class="container shadow p-5 mb-5 bg-white rounded" style="margin-top: 30px">
     
-        <h1 class="text-center mb-4">Stwórz nowe konto</h1>
-<form class="needs-validation" [formGroup]="form">
+        <h1 class="text-center mb-4">Załóż nowe konto</h1>
+<form class="form group needs-validation" [formGroup]="form">
     
     <div class="input-group d-flex flex-row align-items-center">
         <span class="input-group-text mb-3" style="height:58px"><i class="bi bi-person-fill"></i></span>
@@ -33,9 +33,9 @@
         </div>
     </div>
     
-    <div class="input-group align-items-center">
+    <div class="form-row input-group align-items-center">
         <span class="input-group-text mb-3" style="height:58px"><i class="bi bi-envelope-fill"></i></span>
-        <div class="form-floating mb-3 flex-fill">
+        <div class="form-group col form-floating mb-3 flex-fill">
             <input type="text" class="form-control" id="nameInput" placeholder="Imię" formControlName="email"
                 [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
             <label for="nameInput">Email</label>
@@ -64,7 +64,7 @@
    
     <div class="input-group d-flex flex-row align-items-center">
         <span class="input-group-text mb-3" style="height:58px"><i class="bi bi-key-fill"></i></span>
-        <div class="form-floating mb-3 flex-fill">
+        <div class="form-floating mb-3 flex-fill flex-wrap">
             <input type="password" class="form-control" id="nameInput" placeholder="Imię" formControlName="passwordConfirm"
                 [ngClass]="{ 'is-invalid': submitted && f['passwordConfirm'].errors }">
             <label for="nameInput">Potwierdź hasło</label>
@@ -75,10 +75,8 @@
             </div>
         </div>
     </div>
-
-
     
-        <button type="submit" class="SignUpButton" (click)="signup()" [disabled]="!form.valid">Utwórz konto</button>
+        <button type="submit" class="SignUpButton" (click)="signup()">Utwórz konto</button>
     
 </form>
 </div>

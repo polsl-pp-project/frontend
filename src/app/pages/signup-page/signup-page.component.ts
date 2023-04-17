@@ -40,7 +40,10 @@ export class SignupPageComponent {
       let user: User = this.form.getRawValue();
       this.authService.signup(user).subscribe((response) => {
         console.log(response);
+        
       })
     }
   }
+
+  
 }
