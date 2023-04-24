@@ -1,76 +1,115 @@
 
 
+<div class="container shadow p-5 mt-3 mb-5" style="width: 70%;">
 
     
-    <h1 class="text-center mb-4">Dodaj furę</h1>
+    <h1 class="header">Dodaj samochód</h1>
 <form class="form group" [formGroup]="form">
+
+    <div class="row">
+        <div class="col">
 
     <div class="mb-3">
         <label for="carBrand" class="form-label">Marka samochodu</label>
         <input type="text" class="form-control" id="carBrand" formControlName="carBrand">
     </div>
+    </div>
+    <div class="col">
     <div class="mb-3">
-        <label for="price" class="form-label">Cena</label>
+        <label for="price" class="form-label">Cena (doba)</label>
         <input type="number" class="form-control" id="price" formControlName="price">
     </div>
+    </div>
+    <div class="col">
     <div class="mb-3">
         <label for="year" class="form-label">Rok produkcji</label>
         <input type="number" class="form-control" id="year" formControlName="year">
     </div>
+    </div>
+    <div class="col">
+    
     <div class="mb-3">
         <label for="mileage" class="form-label">Przebieg</label>
         <input type="number" class="form-control" id="mileage" formControlName="mileage">
     </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
     <div class="mb-3">
         <label for="body" class="form-label">Rodzaj nadwozia</label>
         <input type="text" class="form-control" id="body" formControlName="body">
     </div>
+</div>
+    <div class="col">
     <div class="mb-3">
         <label for="fuelType" class="form-label">Rodzaj paliwa</label>
         <input type="text" class="form-control" id="fuelType" formControlName="fuelType">
     </div>
+</div>
+    <div class="col">
     <div class="mb-3">
         <label for="transmission" class="form-label">Skrzynia biegów</label>
         <input type="text" class="form-control" id="transmission" formControlName="transmission">
     </div>
+</div>
+    <div class="col">
     <div class="mb-3">
         <label for="doors" class="form-label">Ilość drzwi</label>
         <input type="number" class="form-control" id="doors" formControlName="doors">
     </div>
+</div>
+    <div class="col">
     <div class="mb-3">
         <label for="color" class="form-label">Kolor</label>
         <input type="text" class="form-control" id="color" formControlName="color">
     </div>
+</div>
+<div class="row">
+    <div class="col">
     <div class="mb-3">
         <label for="drive" class="form-label">Napęd</label>
         <input type="text" class="form-control" id="drive" formControlName="drive">
     </div>
+</div>
+
+    <div class="col">
     <div class="mb-3">
-        <label for="power" class="form-label">Ilość koni mechanicznych</label>
+        <label for="power" class="form-label">Ilość koni mech.</label>
         <input type="number" class="form-control" id="power" formControlName="power">
     </div>
+</div>
+    <div class="col">
     <div class="mb-3">
-        <label for="engineCapacity" class="form-label">Pojemnosc silnika</label>
+        <label for="engineCapacity" class="form-label">Pojemność silnika</label>
         <input type="number" class="form-control" id="engineCapacity" formControlName="engineCapacity">
     </div>
+</div>
+    <div class="col">
     <div class="mb-3">
-        <label for="trunkCapacity" class="form-label">Pojemność bagaznika</label>
+        <label for="trunkCapacity" class="form-label">Poj. bagażnika</label>
         <input type="number" class="form-control" id="trunkCapacity" formControlName="trunkCapacity">
     </div>
+</div>
+    <div class="col">
     <div class="mb-3">
         <label for="fuelConsumption" class="form-label">Spalanie</label>
         <input type="number" class="form-control" id="fuelConsumption" formControlName="fuelConsumption">
+        
     </div>
+</div>
+</div></div>
     <div class="mb-3">
         <label for="description" class="form-label">Opis</label>
-        <input type="textarea" class="form-control" id="description" formControlName="description">
+        <textarea class="form-control" id="description" formControlName="description" rows="6"></textarea>
     </div>
     <div class="mb-3">
         <label for="car_image" class="form-label">URL obrazu</label>
-        <input type="textarea" class="form-control" id="car_image" formControlName="car_image">
+        <input type="textarea" class="form-control" id="car_image" formControlName="car_image" placeholder="Jeszcze nie działa">
     </div>
 
-    <button type="submit" class="SignUpButton" (click)="AddCar()">Dodaj furę</button>
+    <button type="submit" class="SubmitButton" (click)="AddCar()">Zapisz</button>
 
 </form>
 
+</div>
