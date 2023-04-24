@@ -10,7 +10,7 @@ export class CarServiceService {
   constructor(private readonly httpService: HttpClient) { }
 
   AddCar(car: Car) {
-    return this.httpService.post<Car>("/api/v1/cars", car, {});
+    return this.httpService.post<Car>("/api/v1/cars/", car, {});
   }
 
 }
