@@ -18,6 +18,7 @@ import { MatInputModule} from '@angular/material/input'
 import { MatNativeDateModule } from '@angular/material/core'
 import { MatOptionModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import { AddCarPageComponent } from './pages/add-car-page/add-car-page.component';
 
 
 
@@ -31,6 +32,7 @@ import {MatSelectModule} from '@angular/material/select';
     SignupPageComponent,
     SearchBoxComponent,
     MainPageComponent,
+    AddCarPageComponent,
     
   ],
   imports: [
