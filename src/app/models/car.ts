@@ -1,4 +1,5 @@
 export class Car {
+    id?: number;
     carBrand?: String; //marka
     price?: Number; //cena za miesiac wynajmu
     year?: Number; //rocznik

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { Login } from 'src/app/models/login'
+import { SessionService } from 'src/app/services/session-service/session.service';
  
 @Component({
   selector: 'app-login-page',
@@ -13,6 +14,7 @@ export class LoginPageComponent {
   submitted = false;
 
   constructor(private authService: AuthService,
+    private sessionService: SessionService,
     private fb: FormBuilder) { }
 
   get f(): {
@@ -31,8 +33,7 @@ export class LoginPageComponent {
     this.submitted = true;
      let login: Login = this.form.getRawValue();
       this.authService.login(login).subscribe((response) => {
-        console.log(response);
-        
+        this.sessionService.setToken(response.token);
       })
     }
   }

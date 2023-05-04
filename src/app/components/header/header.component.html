@@ -1,42 +1,37 @@
 <div>
-<nav class="navbar navbar-expand-lg navbar-color">
-    <img src="assets/LogoProjekt.svg" width="100" height="80" class="m-4" class="image"/>
-    
+    <nav class="navbar navbar-expand-lg navbar-color">
+        <img src="assets/LogoProjekt.svg" width="100" height="80" class="m-4" class="image" />
 
-    <ul class="navbar-nav me-auto">
-        <li class="nav-item item">
-            <a class="nav-link" routerLink="/">Strona główna</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="">Oferta</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="">Kontakt</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Zarezerwuj samochód</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/add-car">Dodaj samochód</a>
-    </li>
-    </ul>
 
-    <ul class="navbar-nav ms-auto m-5">
-      
-          <li class="nav-item">
-              <a class="nav-link" routerLink="/signup" id="SignUp"
-                  >Zarejestruj się</a
-              >
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLink="/login" id="Login"
-                  >Zaloguj się</a
-              >
-          </li>
-      
-      
-  </ul>
-    
-</nav>
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item item">
+                <a class="nav-link" routerLink="/">Strona główna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="">Oferta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="">Kontakt</a>
+            </li>
+            <li class="nav-item" [appRole]="[userRole.Admin]">
+                <a class="nav-link" routerLink="">Zarezerwuj samochód</a>
+            </li>
+            <li class="nav-item" [appRole]="[]">
+                <a class="nav-link" routerLink="/add-car">Dodaj samochód</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto m-5">
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/signup" id="SignUp">Zarejestruj się</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/login" id="Login">Zaloguj się</a>
+            </li>
+
+
+        </ul>
+
+    </nav>
 </div>
-

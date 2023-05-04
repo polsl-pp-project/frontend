@@ -13,4 +13,7 @@ export class CarServiceService {
     return this.httpService.post<Car>("/api/v1/cars/", car, {});
   }
 
+  getCar(id: string) {
+    return this.httpService.get<Car>(`/api/v1/cars/${id}`, {});
+  }
 }

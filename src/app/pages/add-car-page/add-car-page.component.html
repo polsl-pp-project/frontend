@@ -105,7 +105,7 @@
     </div>
     <div class="mb-3">
         <label for="car_image" class="form-label">URL obrazu</label>
-        <input type="textarea" class="form-control" id="car_image" formControlName="car_image" placeholder="Jeszcze nie działa">
+        <input type="file" (change)="onFileChange($event)" class="form-control" id="car_image" placeholder="Jeszcze nie działa">
     </div>
 
     <button type="submit" class="SubmitButton" (click)="AddCar()">Zapisz</button>
