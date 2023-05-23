@@ -1,4 +1,44 @@
 .card-img-top {
-    border-bottom: 1px solid rgba(55, 54, 54, 0.259);   
+    border-bottom: 1px solid rgba(0, 0, 0, 0.257);   
+
+}
+
+.car-card {
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.card-body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.go-to-car {
+    background-color: rgb(16, 2, 50);;
+    border-radius: 10px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    text-decoration:none ;
+    text-align: center;
+    margin-top: 2em;
+    font-weight: 600;
+
+}
+
+.description {
+    font-size: 14px;
+    color: dimgrey;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+    height: 3em;       /* height is 2x line-height, so two lines will display */
+    overflow: hidden;  /* prevents extra lines from being visible */
 }

@@ -12,7 +12,7 @@
             <div class="col-4" style="margin-left: -200px; display: flex; align-items: center;"><i class="bi bi-check iconcheck"></i>
                 <div class="advert">Brak limitu kilometrów</div></div>
         </div>
-    <div class="col-2">
+    <div class="col-2 align-items-center">
         <mat-form-field appearance="fill">
             <mat-label>Lokalizacja</mat-label>
             <mat-select>
@@ -36,7 +36,7 @@
         </div>
         <div class="col-3" style="margin-left: -45px;">
             <div>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" id="form2">
                     <mat-label>Data zakończenia</mat-label>
                     <input matInput [matDatepicker]="picker">
                     <mat-hint>MM/DD/YYYY</mat-hint>
@@ -47,7 +47,7 @@
             </div>
             <div class="col-3">
     <div>
-        <button type="submit" class="btn btn-lg SubmitButton">Szukaj ofert</button>
+        <button type="submit" class="btn btn-lg SubmitButton mt-2">Szukaj ofert</button>
 
     </div>
     </div>
