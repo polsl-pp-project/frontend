@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarServiceService } from './services/auth-service/car-service/car-service.service';
+import { CarServiceService } from './services/car-service/car-service.service';
 
 @Component({
   selector: 'app-root',

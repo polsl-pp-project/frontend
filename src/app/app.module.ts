@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { AddCarPageComponent } from './pages/add-car-page/add-car-page.component';
 import { RoleDirective } from './directives/role.directive';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { CarCardComponent } from './components/car-card/car-card/car-card.component';
 
 
 
@@ -36,6 +37,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     MainPageComponent,
     AddCarPageComponent,
     RoleDirective,
+    CarCardComponent,
 
   ],
   imports: [

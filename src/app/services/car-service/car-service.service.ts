@@ -14,6 +14,11 @@ export class CarServiceService {
   }
 
   getCar(id: string) {
-    return this.httpService.get<Car>(`/api/v1/cars/${id}`, {});
+    return this.httpService.get<Car>("/api/v1/cars/${id}", {});
+  }
+
+  getAllCars() {
+    return this.httpService.get<Car[]>("api/v1/cars/", {});
   }
 }
+

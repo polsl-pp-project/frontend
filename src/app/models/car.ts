@@ -15,5 +15,6 @@ export class Car {
     trunkCapacity?: Number; //pojemnosc bagaznika
     fuelConsumption?: Number; //spalanie
     description?: String;//krotki opis
+    number?: Number;
     car_image?: String;
 }
