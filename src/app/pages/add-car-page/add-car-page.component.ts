@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { convertFile } from 'src/app/helpers/fileToBase64Converter';
 import { Car } from 'src/app/models/car';
-import { CarServiceService } from 'src/app/services/car-service/car-service.service';
+import { CarServiceService } from 'src/app/services/auth-service/car-service/car-service.service';
 
 @Component({
   selector: 'app-add-car-page',

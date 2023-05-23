@@ -21,10 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { AddCarPageComponent } from './pages/add-car-page/add-car-page.component';
 import { RoleDirective } from './directives/role.directive';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { CarCardComponent } from './components/car-card/car-card/car-card.component';
-
-
-
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +34,7 @@ import { CarCardComponent } from './components/car-card/car-card/car-card.compon
     MainPageComponent,
     AddCarPageComponent,
     RoleDirective,
-    CarCardComponent,
+    ForgotPasswordComponent,
 
   ],
   imports: [
