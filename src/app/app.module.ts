@@ -22,6 +22,9 @@ import { AddCarPageComponent } from './pages/add-car-page/add-car-page.component
 import { RoleDirective } from './directives/role.directive';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { CarCardComponent } from './components/car-card/car-card/car-card.component';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     AddCarPageComponent,
     RoleDirective,
     ForgotPasswordComponent,
+    CarCardComponent,
 
   ],
   imports: [
@@ -50,7 +54,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     MatFormFieldModule,
     MatNativeDateModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },],
   bootstrap: [AppComponent]

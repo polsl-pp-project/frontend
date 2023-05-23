@@ -8,7 +8,7 @@ import { AuthGuard } from './guard/auth.guard';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
-  { path: '', component: MainPageComponent},
+  { path: 'home', component: MainPageComponent},
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent},
   { path: 'add-car', component: AddCarPageComponent, canActivate: [AuthGuard]},

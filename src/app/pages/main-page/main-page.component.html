@@ -1,3 +1,13 @@
-<div class="container mt-3 mb-5">
+<div class="container">
     <app-search-box></app-search-box>
+    <div class="container">
+
+        <div class="row row-cols-3">
+            <div *ngFor="let car of Cars">
+                <div class="col pt-4">
+                    <app-car-card [car]="car"></app-car-card>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

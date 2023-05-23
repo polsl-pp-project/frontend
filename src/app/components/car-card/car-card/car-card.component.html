@@ -1,0 +1,18 @@
+<div class="card h-100 car-card">
+    <img
+        class="card-img-top"
+        src="{{car.car_image}}"
+        alt=""
+    />
+    <div class="card-body">
+        <h5 class="card-title">
+            {{ car.carBrand }}
+        </h5>
+        <p class="card-text description">
+            {{ car.description }}
+        </p>
+        <a [routerLink]="" class="go-to-car"
+            >Zobacz więcej</a
+        >
+    </div>
+</div>

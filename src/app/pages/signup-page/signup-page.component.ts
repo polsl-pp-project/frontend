@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
+import { ResponseService } from 'src/app/services/response-service/response.service';
 import { ConfirmedValidator } from 'src/app/validator/confirmed.validator';
 
 
@@ -14,7 +16,9 @@ export class SignupPageComponent {
   submitted = false;
 
   constructor(private authService: AuthService,
-    private fb: FormBuilder) { }
+    private readonly responseService: ResponseService,
+    private fb: FormBuilder,
+    private router: Router) { }
 
   get f(): {
     [key: string]: AbstractControl;
@@ -39,7 +43,8 @@ export class SignupPageComponent {
     if(this.form.valid) {
       let user: User = this.form.getRawValue();
       this.authService.signup(user).subscribe((response) => {
-        console.log(response);
+        this.router.navigate(['/home']).then(()=> 
+      this.responseService.serverSuccessfulRegister());
         
       })
     }

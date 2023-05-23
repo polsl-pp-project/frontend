@@ -3,6 +3,8 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { Login } from 'src/app/models/login'
 import { SessionService } from 'src/app/services/session-service/session.service';
+import { ResponseService } from 'src/app/services/response-service/response.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -15,7 +17,9 @@ export class LoginPageComponent {
 
   constructor(private authService: AuthService,
     private sessionService: SessionService,
-    private fb: FormBuilder) { }
+    private readonly responseService: ResponseService,
+    private fb: FormBuilder,
+    private router: Router) { }
 
   get f(): {
     [key: string]: AbstractControl;
@@ -34,6 +38,8 @@ export class LoginPageComponent {
     let login: Login = this.form.getRawValue();
     this.authService.login(login).subscribe((response) => {
       this.sessionService.setToken(response.token);
+      this.router.navigate(['/home']).then(()=> 
+      this.responseService.serverSuccessfulLogin());
     })
   }
 }
