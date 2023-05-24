@@ -6,13 +6,15 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { OffertsPageComponent } from './pages/offerts-page/offerts-page/offerts-page.component';
 
 const routes: Routes = [
   { path: 'home', component: MainPageComponent},
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent},
   { path: 'add-car', component: AddCarPageComponent, canActivate: [AuthGuard]},
-  { path: 'forgot-password', component: ForgotPasswordComponent}
+  { path: 'forgot-password', component: ForgotPasswordComponent},
+  { path: 'oferta', component: OffertsPageComponent}
 ];
 
 @NgModule({

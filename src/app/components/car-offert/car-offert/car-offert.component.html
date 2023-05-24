@@ -1,0 +1,23 @@
+<div class="card car-card">
+    <img
+        class="card-img-bottom"
+        src="{{car.car_image}}"
+        alt=""
+    />
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+            {{ car.carBrand }}
+        </h5>
+        <p class="card-text price">
+            {{ car.price }} zł/doba
+       </p>
+        <p class="card-text description">
+            {{ car.description }}
+        </p>
+        
+        <a [routerLink]="" class="go-to-car"
+            >Specyfikacja samochodu</a>
+        <a [routerLink]="" class="go-to-car2"
+            >Zarezerwuj teraz</a>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+
+    <p class="title">Nasza flota samochodowa:</p>
+
+    <div class="row">
+        <div *ngFor="let car of Cars">
+            <div class="col pt-4">
+                <app-car-offert [car]="car"></app-car-offert>
+            </div>
+        </div>
+    </div>
+</div>
+

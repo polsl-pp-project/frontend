@@ -24,6 +24,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { CarCardComponent } from './components/car-card/car-card/car-card.component';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { OffertsPageComponent } from './pages/offerts-page/offerts-page/offerts-page.component';
+import { CarOffertComponent } from './components/car-offert/car-offert/car-offert.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
     RoleDirective,
     ForgotPasswordComponent,
     CarCardComponent,
+    OffertsPageComponent,
+    CarOffertComponent,
 
   ],
   imports: [
