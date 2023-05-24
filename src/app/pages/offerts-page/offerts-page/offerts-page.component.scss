@@ -1,4 +1,22 @@
 .title {
     font-size: 50px;
     margin-top: 1em;
+    text-align: center;
+
+}
+
+.search-form {
+    justify-content:end;
+    margin-left: 11em;
+}
+
+.btn {
+    color: rgb(16, 2, 50);
+    border-color: rgb(16, 2, 50);
+
+    &:hover {
+        background-color: white;
+        border-color: rgb(16, 2, 50);
+        color: rgb(16, 2, 50);
+    }
 }
