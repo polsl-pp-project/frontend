@@ -15,7 +15,7 @@
             {{ car.description }}
         </p>
         
-        <a [routerLink]="" class="go-to-car"
+        <a [routerLink]="['/car', car.id]" class="go-to-car"
             >Specyfikacja samochodu</a>
         <a [routerLink]="" class="go-to-car2"
             >Zarezerwuj teraz</a>

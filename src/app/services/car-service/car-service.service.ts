@@ -15,8 +15,8 @@ export class CarServiceService {
     return this.httpService.post<Car>("/api/v1/cars/", car, {});
   }
 
-  getCar(number: string) {
-    return this.httpService.get<Car>(`/api/v1/cars/${number}`, {});
+  getCar(Id: number) {
+    return this.httpService.get<Car>(`/api/v1/cars/${Id}`, {});
   }
 
   getCars(): Observable<Car[]> {

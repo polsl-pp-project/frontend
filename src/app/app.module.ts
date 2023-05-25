@@ -26,6 +26,7 @@ import { CarCardComponent } from './components/car-card/car-card/car-card.compon
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { OffertsPageComponent } from './pages/offerts-page/offerts-page/offerts-page.component';
 import { CarOffertComponent } from './components/car-offert/car-offert/car-offert.component';
+import { CarSpecPageComponent } from './pages/car-spec-page/car-spec-page/car-spec-page.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { CarOffertComponent } from './components/car-offert/car-offert/car-offer
     CarCardComponent,
     OffertsPageComponent,
     CarOffertComponent,
+    CarSpecPageComponent,
 
   ],
   imports: [
