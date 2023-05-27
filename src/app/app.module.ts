@@ -28,6 +28,8 @@ import { OffertsPageComponent } from './pages/offerts-page/offerts-page/offerts-
 import { CarOffertComponent } from './components/car-offert/car-offert/car-offert.component';
 import { CarSpecPageComponent } from './pages/car-spec-page/car-spec-page/car-spec-page.component';
 import { IsLoggedInDirective } from './directives/is-logged-in.directive';
+import { ManageUsersComponent } from './pages/manage-users-page/manage-users/manage-users.component';
+import { ManageCarsComponent } from './pages/manage-cars-page/manage-cars/manage-cars.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { IsLoggedInDirective } from './directives/is-logged-in.directive';
     CarOffertComponent,
     CarSpecPageComponent,
     IsLoggedInDirective,
+    ManageUsersComponent,
+    ManageCarsComponent,
 
   ],
   imports: [

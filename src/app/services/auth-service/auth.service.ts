@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { Login } from 'src/app/models/login';
 import { LoginResponse } from 'src/app/models/login-response';
-import { Observable, Subscription, interval, of } from 'rxjs';
+import { Observable, Subscription, interval, of, map } from 'rxjs';
 import { UserRole } from 'src/app/models/user-role';
 import { parseJwt } from 'src/app/helpers/jwtHelper';
+import { APIResponse } from 'src/app/models/response';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,14 @@ export class AuthService {
   login(login: Login) {
     return this.httpService.post<LoginResponse>("/api/v1/users/login", login, {});
   }
+
+  getUsers(): Observable<User[]> {
+    return this.httpService.get<APIResponse>(`/api/v1/users/`, {})
+    .pipe(map((result: any) => {
+      return result.data.users;
+    }))
+}
+
 
   getUser(): Observable<User> {
     if (this.currentUser) {

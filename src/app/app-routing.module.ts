@@ -8,6 +8,8 @@ import { AuthGuard } from './guard/auth.guard';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { OffertsPageComponent } from './pages/offerts-page/offerts-page/offerts-page.component';
 import { CarSpecPageComponent } from './pages/car-spec-page/car-spec-page/car-spec-page.component';
+import { ManageUsersComponent } from './pages/manage-users-page/manage-users/manage-users.component';
+import { ManageCarsComponent } from './pages/manage-cars-page/manage-cars/manage-cars.component';
 
 const routes: Routes = [
   { path: 'home', component: MainPageComponent},
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'add-car', component: AddCarPageComponent, canActivate: [AuthGuard]},
   { path: 'forgot-password', component: ForgotPasswordComponent},
   { path: 'oferta', component: OffertsPageComponent},
-  { path: 'car/:Id', component: CarSpecPageComponent}
+  { path: 'car/:Id', component: CarSpecPageComponent},
+  { path: 'manage-users', component: ManageUsersComponent},
+  { path: 'manage-cars', component: ManageCarsComponent}
 ];
 
 @NgModule({

@@ -17,13 +17,19 @@
                 <a class="nav-link" routerLink="">Zarezerwuj samochód</a>
             </li>
             <li class="nav-item" [appRole]="[]">
+                <a class="nav-link" routerLink="/manage-users">Zarządzaj użyt.</a>
+            </li>
+            <li class="nav-item" [appRole]="[]">
+                <a class="nav-link" routerLink="/manage-cars">Zarządzaj sam.</a>
+            </li>
+            <li class="nav-item" [appRole]="[]">
                 <a class="nav-link" routerLink="/add-car">Dodaj samochód</a>
             </li>
         </ul>
 
         <ul class="navbar-nav ms-auto m-5">
 
-            <li class="nav-item">
+            <li class="nav-item" appIsLoggedIn>
                 <a class="nav-link" routerLink="/signup" id="SignUp">Zarejestruj się</a>
             </li>
             <li class="nav-item" appIsLoggedIn>
