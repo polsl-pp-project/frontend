@@ -27,6 +27,7 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { OffertsPageComponent } from './pages/offerts-page/offerts-page/offerts-page.component';
 import { CarOffertComponent } from './components/car-offert/car-offert/car-offert.component';
 import { CarSpecPageComponent } from './pages/car-spec-page/car-spec-page/car-spec-page.component';
+import { IsLoggedInDirective } from './directives/is-logged-in.directive';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { CarSpecPageComponent } from './pages/car-spec-page/car-spec-page/car-sp
     OffertsPageComponent,
     CarOffertComponent,
     CarSpecPageComponent,
+    IsLoggedInDirective,
 
   ],
   imports: [

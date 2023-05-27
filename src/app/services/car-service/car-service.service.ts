@@ -16,7 +16,11 @@ export class CarServiceService {
   }
 
   getCar(Id: number) {
-    return this.httpService.get<Car>(`/api/v1/cars/${Id}`, {});
+    return this.httpService.get<APIResponse>(`/api/v1/cars/${Id}`, {})
+      .pipe(map((result) => {
+        result.data.car.car_image = "data:image/jpeg;base64," + result.data.car.car_image;
+        return result;
+      }))
   }
 
   getCars(): Observable<Car[]> {

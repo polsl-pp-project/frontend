@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { Login } from 'src/app/models/login';
 import { LoginResponse } from 'src/app/models/login-response';
-import { Observable, of } from 'rxjs';
+import { Observable, Subscription, interval, of } from 'rxjs';
 import { UserRole } from 'src/app/models/user-role';
 import { parseJwt } from 'src/app/helpers/jwtHelper';
 
@@ -11,10 +11,15 @@ import { parseJwt } from 'src/app/helpers/jwtHelper';
   providedIn: 'root'
 })
 export class AuthService {
+  subscription!: Subscription;
 
   private currentUser: User | undefined;
 
-  constructor(private readonly httpService: HttpClient) { }
+  constructor(private readonly httpService: HttpClient) {
+    this.refresh()
+    const source = interval(60000);
+    this.subscription = source.subscribe(() => this.refresh());
+  }
 
   signup(user: User) {
     return this.httpService.post<User>("/api/v1/users/signup", user, {});
@@ -34,25 +39,27 @@ export class AuthService {
           tap((user: User) => {
             this.currentUser = user;
           }))*/
-      this.currentUser = {name: "Piotr", lastName: "Nowakowski", email: "abc@gmail.com", password: "Abc123", passwordConfirm: "Abc123", role: UserRole.Admin};
-      return of (this.currentUser);
+      this.currentUser = { name: "Piotr", lastName: "Nowakowski", email: "abc@gmail.com", password: "Abc123", passwordConfirm: "Abc123", role: UserRole.Admin };
+      return of(this.currentUser);
     }
   }
 
   refresh() {
     try {
       var token = parseJwt(localStorage.getItem('token') ?? "");
-      console.log(token)
       var expirationDate = new Date(token.exp * 1000);
-      if (expirationDate.getTime() - new Date().getTime() < 60000) {
-        return this.httpService.get("/api/v1/users/refresh", {})
-        .subscribe((result) => {
-          localStorage.setItem('token', result as string);
-        })
+      if (expirationDate.getTime() - new Date().getTime() < 60000 && expirationDate.getTime() - new Date().getTime() > 0) {
+        return this.httpService.get<any>("/api/v1/users/refresh", {})
+          .subscribe((result) => {
+            localStorage.setItem('token', result.newToken);
+          })
+      }
+      else if (expirationDate.getTime() - new Date().getTime() < 0) {
+        localStorage.removeItem('token');
       }
       return;
     }
-    catch(ex) {
+    catch (ex) {
       return;
     }
   }
