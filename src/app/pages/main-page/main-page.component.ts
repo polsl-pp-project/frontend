@@ -11,18 +11,27 @@ import { CarServiceService } from 'src/app/services/car-service/car-service.serv
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
+  subscription!: Subscription;
+
   Cars: Car[] = [];
 
   constructor(private readonly carService: CarServiceService,
     private authService: AuthService) {
+      this.authService.refresh()
+      const source = interval(60000);
+      this.subscription = source.subscribe(() => this.authService.refresh());
   }
 
   ngOnInit() {
     this.carService.getCars().subscribe((result) => {
-      this.Cars = result.slice(0, 6);
+      this.Cars = result;
     })
   }
 
   ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
+
+
+
