@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
 
 @Component({
@@ -11,7 +12,10 @@ export class ForgotPasswordComponent implements OnInit {
 
   email = "";
 
+  token: string | null = "";
+
   constructor(private readonly authService: AuthService,
+    private readonly activatedRoute: ActivatedRoute,
     private fb: FormBuilder) {
 
   }
@@ -26,7 +30,14 @@ export class ForgotPasswordComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.resetPassword(); // do wywalenia po zrobieniu formatki
+    this.token = this.activatedRoute.snapshot.paramMap.get('token');
+    if (!this.token) {
+      // formatka do wypełnienia emaila, po wysłaniu resetPassword
+      this.resetPassword(); // do wywalenia po zrobieniu formatki
+    }
+    else {
+      // formatka do wypełnienia hasła nowego i potwierdzenia
+    }
   }
   
   // na przycisku submit w formatce

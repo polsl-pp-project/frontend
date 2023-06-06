@@ -23,6 +23,7 @@ export class RoleDirective implements OnInit {
         this.el.nativeElement.style.display = 'none';
         return;
       }
+      this.el.nativeElement.style.display = '';
     });
   }
 }

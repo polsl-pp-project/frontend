@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupPageComponent},
   { path: 'add-car', component: AddCarPageComponent, canActivate: [AuthGuard]},
   { path: 'forgot-password', component: ForgotPasswordComponent},
+  { path: 'forgot-password/:token', component: ForgotPasswordComponent},
   { path: 'oferta', component: OffertsPageComponent},
   { path: 'car/:Id', component: CarSpecPageComponent},
   { path: 'manage-users', component: ManageUsersComponent},

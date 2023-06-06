@@ -38,8 +38,10 @@ export class LoginPageComponent {
     let login: Login = this.form.getRawValue();
     this.authService.login(login).subscribe((response) => {
       this.sessionService.setToken(response.token);
-      this.router.navigate(['/home']).then(()=> 
-      this.responseService.serverSuccessfulLogin());
+      this.router.navigate(['/home']).then(() => {
+        this.authService.getJwtUser();
+        this.responseService.serverSuccessfulLogin()
+      });
     })
   }
 }
