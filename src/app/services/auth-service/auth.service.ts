@@ -80,4 +80,18 @@ export class AuthService {
   forgotPassword(email: string) {
     return this.httpService.post("/api/v1/users/forgotPassword", { email: email }, {});
   }
+
+  getUserbyId(Id: number){
+    return this.httpService.get<APIResponse>(`/api/v1/users/${Id}`, {})
+  }
+
+
+  updateUser(Id: string, user: User): Observable<User> {
+    return this.httpService.patch<User>(`/api/v1/users/${Id}`, user);
+  }
+    
+
+  deleteUser(Id: number) {
+    return this.httpService.delete<User>(`/api/v1/users/${Id}`, {})
+}
 }
