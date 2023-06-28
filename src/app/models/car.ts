@@ -14,7 +14,7 @@ export class Car {
     engineCapacity?: Number; //pojemnosc silnika
     trunkCapacity?: Number; //pojemnosc bagaznika
     fuelConsumption?: Number; //spalanie
-    number?: Number;
+    number?: number | undefined;
     description?: String;//krotki opis
     car_image?: String;
 }

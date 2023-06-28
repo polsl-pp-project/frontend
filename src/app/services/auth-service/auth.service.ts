@@ -91,7 +91,7 @@ export class AuthService {
   }
     
 
-  deleteUser(Id: number) {
+  deleteUser(Id: number | undefined) {
     return this.httpService.delete<User>(`/api/v1/users/${Id}`, {})
 }
 }

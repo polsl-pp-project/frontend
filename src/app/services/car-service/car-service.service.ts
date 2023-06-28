@@ -32,4 +32,8 @@ export class CarServiceService {
         return result.data.cars;
       }))
   }
+
+  deleteCar(Id: number | undefined) {
+    return this.httpService.delete<Car>(`/api/v1/cars/${Id}`, {})
+}
 }
