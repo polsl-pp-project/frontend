@@ -3,11 +3,15 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 
-html, body { height: 100%}
+html, 
+body { 
+  height: 100%;
+}
 
 
 * {
   font-family: 'Poppins-Regular' !important;
+  
 }
 
 @font-face {

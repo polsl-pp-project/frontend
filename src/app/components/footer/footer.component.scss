@@ -1,19 +1,36 @@
 .footer-color {
     background: rgb(16, 2, 50);
-    margin-top: 0.5cm;
+    margin-top: 0.6cm;
 }
 
 a { 
-    font-size: 17px;  
+    font-size: 17px;
+    margin-left: 40px;  
 
 }
 
 .list-inline-item {
     color: white;
-    margin-left: 15px;
+
+}
+
+.lista {
+    padding-right: 2.5cm;
+    padding-bottom: 0.6cm;
+}
+
+.lewo {
+    padding-left: 2cm;
+    padding-bottom: 0.6cm;
 }
 
 .fixed {
     position: relative;
-    bottom: 0px;
+    bottom: 0;
+    
 }
+
+ .container {
+    margin-bottom: 20px;
+    width: 100%;
+ }

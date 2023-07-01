@@ -8,7 +8,7 @@ import { CarServiceService } from 'src/app/services/car-service/car-service.serv
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent {
   subscription!: Subscription;

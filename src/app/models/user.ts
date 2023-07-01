@@ -7,4 +7,5 @@ export class User {
     role?: UserRole;
     password?: string;
     passwordConfirm?: string;
+    customId?: string | undefined;
 }

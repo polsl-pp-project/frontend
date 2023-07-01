@@ -30,6 +30,8 @@ import { CarSpecPageComponent } from './pages/car-spec-page/car-spec-page/car-sp
 import { IsLoggedInDirective } from './directives/is-logged-in.directive';
 import { ManageUsersComponent } from './pages/manage-users-page/manage-users/manage-users.component';
 import { ManageCarsComponent } from './pages/manage-cars-page/manage-cars/manage-cars.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 @NgModule({
@@ -51,6 +53,7 @@ import { ManageCarsComponent } from './pages/manage-cars-page/manage-cars/manage
     IsLoggedInDirective,
     ManageUsersComponent,
     ManageCarsComponent,
+    
 
   ],
   imports: [
@@ -67,7 +70,8 @@ import { ManageCarsComponent } from './pages/manage-cars-page/manage-cars/manage
     MatNativeDateModule,
     MatOptionModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },],
   bootstrap: [AppComponent]

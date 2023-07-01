@@ -20,7 +20,7 @@
                             <td class="">{{ user.email }}</td>
                             <td class="">{{ user.role }}</td>
                             <td class="action"></td>
-                            <td class="action"></td>
+                            <td class="action"><button  id="deletebutton"mat-flat-button (click)="onDelete(user.customId)">Usuń</button></td>
                         </tr>
                     </tbody>
                 </table>

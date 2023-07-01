@@ -1,9 +1,9 @@
-<div>
+<div class="mainbox" style="width: 100%;">
     <nav class="navbar navbar-expand-lg navbar-color">
         <img src="assets/LogoProjekt.svg" width="100" height="80" class="m-4" class="image" />
 
 
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav left me-auto">
             <li class="nav-item item">
                 <a class="nav-link" routerLink="/home">Strona główna</a>
             </li>
@@ -13,29 +13,32 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="">Kontakt</a>
             </li>
-            <li class="nav-item" [appRole]="[userRole.Admin]">
+            <li class="nav-item">
                 <a class="nav-link" routerLink="">Zarezerwuj samochód</a>
-            </li>
-            <li class="nav-item" [appRole]="[]">
-                <a class="nav-link" routerLink="/manage-users">Zarządzaj użyt.</a>
-            </li>
-            <li class="nav-item" [appRole]="[]">
-                <a class="nav-link" routerLink="/manage-cars">Zarządzaj sam.</a>
-            </li>
-            <li class="nav-item" [appRole]="[]">
-                <a class="nav-link" routerLink="/add-car">Dodaj samochód</a>
             </li>
         </ul>
 
-        <ul class="navbar-nav ms-auto m-5">
+        <ul class="navbar-nav right m-2">
 
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/signup" id="SignUp">Zarejestruj się</a>
+            <li class="nav-item" appIsLoggedIn>
+                <a class="nav-link"  routerLink="/signup" id="SignUp">Zarejestruj się</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" appIsLoggedIn>
                 <a class="nav-link" routerLink="/login" id="Login">Zaloguj się</a>
             </li>
 
+            <div class="menuApp" [appRole]="[userRole.Admin, userRole.User]">
+                <i class="bi bi-person-circle person"></i> <button mat-button id="menu" [matMenuTriggerFor]="menu">
+                 Witaj, {{name}} <i class="bi bi-caret-down"></i></button>
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item [routerLink]="['/user-reservations']">Moje rezerwacje</button>
+                <button mat-menu-item [appRole]="[userRole.Admin]" [routerLink]="['/add-car']">Dodaj samochód</button>
+                <button mat-menu-item [appRole]="[userRole.Admin]" [routerLink]="['/manage-cars']">Zarządzaj samochodami</button>
+                <button mat-menu-item [appRole]="[userRole.Admin]" [routerLink]="['/manage-users']">Zarządzaj użytkownikami</button>
+                <button mat-menu-item (click)="onLogout()">Wyloguj się</button>
+            </mat-menu>
+        </div>
         </ul>
 
     </nav>
