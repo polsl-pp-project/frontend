@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { interval } from 'rxjs/internal/observable/interval';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Car } from 'src/app/models/car';
+import { Reservation } from 'src/app/models/reservation';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { CarServiceService } from 'src/app/services/car-service/car-service.service';
 

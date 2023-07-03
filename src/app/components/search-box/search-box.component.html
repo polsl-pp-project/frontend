@@ -1,56 +1,58 @@
-
 <div class="container">
     <div class="row">
         <div class="row">
-        <h2 class="mb-1 Title">Rent&Go - wyszukaj, zarezerwuj i jedź!</h2>
+            <h2 class="mb-1 Title">Rent&Go - wyszukaj, zarezerwuj i jedź!</h2>
         </div>
         <div class="row mb-4">
             <div class="col-4" style="display: flex; align-items: center "><i class="bi bi-check iconcheck"></i>
-                <div class="advert">Darmowa rezygnacja</div></div>
-            <div class="col-4" style="margin-left: -135px;display: flex; align-items: center"><i class="bi bi-check iconcheck"></i>
-                <div class="advert">Brak depozytu</div></div>
-            <div class="col-4" style="margin-left: -200px; display: flex; align-items: center;"><i class="bi bi-check iconcheck"></i>
-                <div class="advert">Brak limitu kilometrów</div></div>
+                <div class="advert">Darmowa rezygnacja</div>
+            </div>
+            <div class="col-4" style="margin-left: -135px;display: flex; align-items: center"><i
+                    class="bi bi-check iconcheck"></i>
+                <div class="advert">Brak depozytu</div>
+            </div>
+            <div class="col-4" style="margin-left: -200px; display: flex; align-items: center;"><i
+                    class="bi bi-check iconcheck"></i>
+                <div class="advert">Brak limitu kilometrów</div>
+            </div>
         </div>
-    <div class="col-2 align-items-center">
-        <mat-form-field appearance="fill">
-            <mat-label>Lokalizacja</mat-label>
-            <mat-select>
-              <mat-option value="one">Gliwice</mat-option>
-              <mat-option value="two">Bytom</mat-option>
-              <mat-option value="two">Zabrze</mat-option>
-            </mat-select>
-          </mat-form-field>
-    </div>
-
-    <div class="col-3" style="margin-left: 20px">
-        <div>
+        <div class="col-2 align-items-center">
             <mat-form-field appearance="fill">
-                <mat-label>Data rozpoczęcia</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>   
+                <mat-label>Lokalizacja</mat-label>
+                <mat-select>
+                    <mat-option value="one">Gliwice</mat-option>
+                    <mat-option value="two">Bytom</mat-option>
+                    <mat-option value="two">Zabrze</mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
-        </div>
-        <div class="col-3" style="margin-left: -45px;">
-            <div>
-                <mat-form-field appearance="fill" id="form2">
-                    <mat-label>Data zakończenia</mat-label>
-                    <input matInput [matDatepicker]="picker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>   
-            </div>
-            </div>
-            <div class="col-3">
-    <div>
-        <button type="submit" class="btn btn-lg SubmitButton mt-2">Szukaj ofert</button>
 
+        <div class="col-3">
+            <div>
+                <mat-form-field>
+                    <input matInput [ngxMatDatetimePicker]="startPicker" [formControl]="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="$any(startPicker)"></mat-datepicker-toggle>
+                    <ngx-mat-datetime-picker #startPicker>
+                    </ngx-mat-datetime-picker>
+                 </mat-form-field>
+            </div>
+        </div>
+        <div class="col-3">
+            <div>
+                <mat-form-field>
+                    <input matInput [ngxMatDatetimePicker]="endPicker" [formControl]="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="$any(endPicker)"></mat-datepicker-toggle>
+                    <ngx-mat-datetime-picker #endPicker>
+                    </ngx-mat-datetime-picker>
+                 </mat-form-field>
+            </div>
+        </div>
+        <div class="col-3">
+            <div>
+                <button type="submit" class="btn btn-lg SubmitButton mt-2" (click)="search()">Szukaj ofert</button>
+
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-    
+
 </div>

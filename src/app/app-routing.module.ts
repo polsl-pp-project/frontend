@@ -10,6 +10,7 @@ import { OffertsPageComponent } from './pages/offerts-page/offerts-page/offerts-
 import { CarSpecPageComponent } from './pages/car-spec-page/car-spec-page/car-spec-page.component';
 import { ManageUsersComponent } from './pages/manage-users-page/manage-users/manage-users.component';
 import { ManageCarsComponent } from './pages/manage-cars-page/manage-cars/manage-cars.component';
+import { ReserveCarComponent } from './components/reserve-car/reserve-car.component';
 
 const routes: Routes = [
   { path: 'home', component: MainPageComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'oferta', component: OffertsPageComponent},
   { path: 'car/:Id', component: CarSpecPageComponent},
   { path: 'manage-users', component: ManageUsersComponent},
-  { path: 'manage-cars', component: ManageCarsComponent}
+  { path: 'manage-cars', component: ManageCarsComponent},
+  { path: 'reserve', component: ReserveCarComponent}
 ];
 
 @NgModule({
