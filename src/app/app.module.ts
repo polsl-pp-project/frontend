@@ -34,6 +34,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ReserveCarComponent } from './components/reserve-car/reserve-car.component';
 import { NGX_MAT_DATE_FORMATS, NgxMatDateAdapter, NgxMatDateFormats, NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { NgxMatMomentModule } from '@angular-material-components/moment-adapter';
+import { CarSpecCardComponent } from './components/car-spec/car-spec-card/car-spec-card.component';
 
 const CUSTOM_MOMENT_FORMATS: NgxMatDateFormats = {
   parse: {
@@ -67,6 +68,7 @@ const CUSTOM_MOMENT_FORMATS: NgxMatDateFormats = {
     ManageUsersComponent,
     ManageCarsComponent,
     ReserveCarComponent,
+    CarSpecCardComponent,
 
 
   ],
