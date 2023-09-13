@@ -1,0 +1,27 @@
+<div class="confirmation-container">
+    <h2 class="title">Potwierdzenie Rezerwacji</h2>
+    <div class="car-details">
+        <img src="{{car.car_image}}" alt="Car Image" class="car-image" />
+        <div class="car-info">
+            <p class="car-brand">{{ car.carBrand }}</p>
+            <p>Data rozpoczęcia: {{ startDate | date: 'medium' }}</p>
+            <p>Data zakończenia: {{ endDate | date: 'medium' }}</p>
+            <p>Cena rezerwacji: {{ rentalPrice }} PLN</p>
+            <p>Wybierz miejsce odbioru samochodu:</p>
+            <select [(ngModel)]="pickupLocation">
+                <option value="Gliwice, ul. Kozielska 40">Gliwice, ul. Kozielska 40</option>
+                <option value="Katowice, Silesia City Center">Katowice, Silesia City Center</option>
+                <!-- Dodaj więcej opcji, jeśli jest taka potrzeba -->
+            </select>
+            <p>Wybierz miejsce zwrotu samochodu:</p>
+            <select [(ngModel)]="returnLocation">
+                <option value="Gliwice, ul. Kozielska 40">Gliwice, ul. Kozielska 40</option>
+                <option value="Katowice, Silesia City Center">Katowice, Silesia City Center</option>
+            </select>
+
+
+
+            <button class="create-reservation-btn" (click)="createReservation()">Utwórz rezerwację</button>
+        </div>
+    </div>
+</div>

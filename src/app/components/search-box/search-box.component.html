@@ -16,18 +16,10 @@
                 <div class="advert">Brak limitu kilometrów</div>
             </div>
         </div>
-        <div class="col-2 align-items-center">
-            <mat-form-field appearance="fill">
-                <mat-label>Lokalizacja</mat-label>
-                <mat-select>
-                    <mat-option value="one">Gliwice</mat-option>
-                    <mat-option value="two">Bytom</mat-option>
-                    <mat-option value="two">Zabrze</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
+        
 
         <div class="col-3">
+            <p>Data rozpoczęcia:</p>
             <div>
                 <mat-form-field>
                     <input matInput [ngxMatDatetimePicker]="startPicker" [formControl]="startDate">
@@ -38,6 +30,7 @@
             </div>
         </div>
         <div class="col-3">
+            <p>Data zakończenia:</p>
             <div>
                 <mat-form-field>
                     <input matInput [ngxMatDatetimePicker]="endPicker" [formControl]="endDate">
@@ -47,7 +40,7 @@
                  </mat-form-field>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-3 mt-5">
             <div>
                 <button type="submit" class="btn btn-lg SubmitButton mt-2" (click)="search()">Szukaj ofert</button>
 

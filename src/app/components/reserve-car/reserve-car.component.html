@@ -1,2 +1,23 @@
-<app-search-box (foundCars)="displayCars($event)"></app-search-box>
-<!--ngFor z lista samochodow znalezionych-->
+<app-search-box (foundCars)="displayCars($event.startDate, $event.endDate)"></app-search-box>
+
+
+
+<div class="container">
+
+    <div class="row row-cols-3">
+        <div *ngFor="let car of matchingcars" class="car-card">
+            <div class="col pt-4">
+                <div *ngIf="matchingcars.length > 0" class="car-list">
+                    <img [src]="car.car_image" alt="Car Image" class="card-img-top" />
+                    <div class="card-body">
+                        <h3 class="card-title">{{ car.carBrand }}</h3>
+                        <p class="rental-price">Cena za cały okres wynajmu: {{ car.rentalprice }} zł</p>
+                        <button (click)="reserve(car)" class="go-to-car">Wybieram</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

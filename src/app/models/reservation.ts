@@ -1,7 +1,7 @@
 export interface Reservation {
     customId?: string;
-    startDate?: Date;
-    endDate?: Date;
+    startDate?: Date | any;
+    endDate?: Date | any;
     carNumber?: number;
     userId?: string;
     startPlace?: string;

@@ -35,6 +35,11 @@ import { ReserveCarComponent } from './components/reserve-car/reserve-car.compon
 import { NGX_MAT_DATE_FORMATS, NgxMatDateAdapter, NgxMatDateFormats, NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { NgxMatMomentModule } from '@angular-material-components/moment-adapter';
 import { CarSpecCardComponent } from './components/car-spec/car-spec-card/car-spec-card.component';
+import { ReservationConfirmationComponent } from './pages/reservation-confirmation/reservation-confirmation/reservation-confirmation.component';
+import { ManageReservationsComponent } from './pages/manage-reservations/manage-reservations/manage-reservations.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page/contact-page.component';
+
+
 
 const CUSTOM_MOMENT_FORMATS: NgxMatDateFormats = {
   parse: {
@@ -69,6 +74,9 @@ const CUSTOM_MOMENT_FORMATS: NgxMatDateFormats = {
     ManageCarsComponent,
     ReserveCarComponent,
     CarSpecCardComponent,
+    ReservationConfirmationComponent,
+    ManageReservationsComponent,
+    ContactPageComponent,
 
 
   ],
@@ -90,11 +98,12 @@ const CUSTOM_MOMENT_FORMATS: NgxMatDateFormats = {
     MatMenuModule,
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
-    NgxMatMomentModule
+    NgxMatMomentModule,
+    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
       { provide: NGX_MAT_DATE_FORMATS, useValue: CUSTOM_MOMENT_FORMATS }
-    ],
+    ] , 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

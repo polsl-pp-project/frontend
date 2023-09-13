@@ -11,6 +11,9 @@ import { CarSpecPageComponent } from './pages/car-spec-page/car-spec-page/car-sp
 import { ManageUsersComponent } from './pages/manage-users-page/manage-users/manage-users.component';
 import { ManageCarsComponent } from './pages/manage-cars-page/manage-cars/manage-cars.component';
 import { ReserveCarComponent } from './components/reserve-car/reserve-car.component';
+import { ReservationConfirmationComponent } from './pages/reservation-confirmation/reservation-confirmation/reservation-confirmation.component';
+import { ManageReservationsComponent } from './pages/manage-reservations/manage-reservations/manage-reservations.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page/contact-page.component';
 
 const routes: Routes = [
   { path: 'home', component: MainPageComponent},
@@ -23,7 +26,10 @@ const routes: Routes = [
   { path: 'car/:Id', component: CarSpecPageComponent},
   { path: 'manage-users', component: ManageUsersComponent},
   { path: 'manage-cars', component: ManageCarsComponent},
-  { path: 'reserve', component: ReserveCarComponent}
+  { path: 'reserve', component: ReserveCarComponent},
+  { path: 'confirmation', component: ReservationConfirmationComponent},
+  { path: 'user-reservations', component:ManageReservationsComponent},
+  { path: 'contact', component: ContactPageComponent}
 ];
 
 @NgModule({

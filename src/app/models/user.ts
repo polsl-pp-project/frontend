@@ -8,4 +8,6 @@ export interface User {
     password?: string;
     passwordConfirm?: string;
     customId?: string | undefined;
+    _id?: string | undefined;
+    reservations?: string[];
 }

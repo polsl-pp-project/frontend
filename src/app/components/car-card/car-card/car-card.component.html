@@ -11,7 +11,7 @@
         <p class="card-text description">
             {{ car.description }}
         </p>
-        <a [routerLink]="" class="go-to-car"
+        <a [routerLink]="['/car', car.number]" class="go-to-car"
             >Zobacz więcej</a
         >
     </div>

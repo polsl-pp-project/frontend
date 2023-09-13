@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Car } from 'src/app/models/car';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-search-box',
@@ -10,34 +10,40 @@ import { Car } from 'src/app/models/car';
 })
 export class SearchBoxComponent {
 
-  constructor(private readonly activatedRoute: ActivatedRoute,
-    private readonly router: Router) {
-      this.activatedRoute.queryParams.subscribe((result) => {
-        if (result['startDate'] && result['endDate']) {
-          this.startDate.setValue(new Date(result['startDate']));
-          this.endDate.setValue(new Date(result['endDate']));
-        }
-      })
-    }
+  constructor(
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly router: Router
+  ) {
+    this.activatedRoute.queryParams.subscribe((result) => {
+      if (result['startDate'] && result['endDate']) {
+        this.startDate.setValue(moment(result['startDate']));
+        this.endDate.setValue(moment(result['endDate']));
+      }
+    });
+  }
 
-  @Output() foundCars: EventEmitter<Car[]> = new EventEmitter<Car[]>();
+  @Output() foundCars: EventEmitter<{ startDate: Date, endDate: Date }> = new EventEmitter();
 
-  startDate = new FormControl<Date | null>(new Date());
-
-  endDate = new FormControl<Date | null>(new Date());
+  startDate = new FormControl<moment.Moment | null>(moment());
+  endDate = new FormControl<moment.Moment | null>(moment());
 
   search() {
-    // request do api o wyszukanie samochodow, wynik emitowany tutaj
-    this.activatedRoute.url.subscribe((url) => {
-      console.log(url)
-      if (url.length === 0 || url[0].path !== "reserve") {
-        this.router.navigate(["reserve"], { queryParams: { startDate: this.startDate.value?.toISOString(), endDate: this.endDate.value?.toISOString()} });
-        this.router
+    // Używamy Moment.js do parsowania i formatowania dat
+    const startDateValue = this.startDate.value?.toDate() || new Date();
+    const endDateValue = this.endDate.value?.toDate() || new Date();
+
+  
+    this.foundCars.emit({
+      startDate: startDateValue,
+      endDate: endDateValue
+    });
+
+    // Przeniesienie tej części logiki do routingu
+    this.router.navigate(["reserve"], {
+      queryParams: {
+        startDate: startDateValue.toISOString(),
+        endDate: endDateValue.toISOString()
       }
-      else {
-        this.foundCars.emit([]);
-      }
-    })
+    });
   }
 }
-

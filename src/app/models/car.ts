@@ -1,7 +1,7 @@
 export interface Car {
-    id?: number;
+    _id?: number;
     carBrand?: String; //marka
-    price?: Number; //cena za miesiac wynajmu
+    price?: Number | any; //cena za miesiac wynajmu
     year?: Number; //rocznik
     mileage?: Number; //przebieg
     body?: String; //rodzaj nadwozia
@@ -17,4 +17,6 @@ export interface Car {
     number?: number | undefined;
     description?: String;//krotki opis
     car_image?: String;
+    rentalprice?: any;
+
 }

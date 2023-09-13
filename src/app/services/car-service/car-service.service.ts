@@ -15,7 +15,7 @@ export class CarServiceService {
     return this.httpService.post<Car>("/api/v1/cars/", car, {});
   }
 
-  getCar(Id: number) {
+  getCar(Id: number | undefined) {
     return this.httpService.get<APIResponse>(`/api/v1/cars/${Id}`, {})
       .pipe(map((result) => {
         result.data.car.car_image = "data:image/jpeg;base64," + result.data.car.car_image;
@@ -36,4 +36,29 @@ export class CarServiceService {
   deleteCar(Id: number | undefined) {
     return this.httpService.delete<Car>(`/api/v1/cars/${Id}`, {})
 }
+
+getAvailableCars(startDate: Date, endDate: Date): Observable<Car[]> {
+  const requestData = {
+    startDate: startDate.toISOString(),
+    endDate: endDate.toISOString()
+  };
+
+  return this.httpService.post<APIResponse>('/api/v1/cars/available', requestData)
+  .pipe(
+    map((result) => {
+      if (result.data && result.data.matchingCars) {
+        // Assuming matchingCars is an array of Car objects
+        return result.data.matchingCars.map((apiCar: any) => {
+          apiCar.car_image = 'data:image/jpeg;base64,' + apiCar.car_image;
+          return apiCar as Car;
+        });
+      } else {
+        // Handle the case where matchingCars is not present or empty
+        return [];
+      }
+    })
+  );
+
+}
+
 }
