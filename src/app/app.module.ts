@@ -38,6 +38,7 @@ import { CarSpecCardComponent } from './components/car-spec/car-spec-card/car-sp
 import { ReservationConfirmationComponent } from './pages/reservation-confirmation/reservation-confirmation/reservation-confirmation.component';
 import { ManageReservationsComponent } from './pages/manage-reservations/manage-reservations/manage-reservations.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page/contact-page.component';
+import { ManageAllReservationsComponent } from './pages/manage-all-reservations/manage-all-reservations/manage-all-reservations.component';
 
 
 
@@ -77,6 +78,7 @@ const CUSTOM_MOMENT_FORMATS: NgxMatDateFormats = {
     ReservationConfirmationComponent,
     ManageReservationsComponent,
     ContactPageComponent,
+    ManageAllReservationsComponent,
 
 
   ],

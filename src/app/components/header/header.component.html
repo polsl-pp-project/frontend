@@ -36,6 +36,7 @@
                 <button mat-menu-item [appRole]="[userRole.Admin]" [routerLink]="['/add-car']">Dodaj samochód</button>
                 <button mat-menu-item [appRole]="[userRole.Admin]" [routerLink]="['/manage-cars']">Zarządzaj samochodami</button>
                 <button mat-menu-item [appRole]="[userRole.Admin]" [routerLink]="['/manage-users']">Zarządzaj użytkownikami</button>
+                <button mat-menu-item [appRole]="[userRole.Admin]" [routerLink]="['/all-reservations']">Zarządzaj rezerwacjami</button>
                 <button mat-menu-item (click)="onLogout()">Wyloguj się</button>
             </mat-menu>
         </div>

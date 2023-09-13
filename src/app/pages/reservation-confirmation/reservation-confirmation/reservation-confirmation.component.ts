@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { Car } from 'src/app/models/car';
+import { Reservation } from 'src/app/models/reservation';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { CarServiceService } from 'src/app/services/car-service/car-service.service';
@@ -45,22 +46,24 @@ export class ReservationConfirmationComponent implements OnInit {
   }
   
   createReservation() {
-    this.authService.getUser().subscribe((resp) => 
-      this._id = resp?._id)
+    this.authService.getUser().subscribe((resp) => {
+      this._id = resp?.customId;
   
-    const reservation = {
-      startDate: this.startDate,
-      endDate: this.endDate,
-      carNumber: this.carId,
-      startPlace: this.pickupLocation,
-      endPlace: this.returnLocation,
-      userId: this._id,
-    };
+      const reservation: Partial<Reservation> = {
+        startDate: this.startDate,
+        endDate: this.endDate,
+        carNumber: this.carId,
+        startPlace: this.pickupLocation,
+        endPlace: this.returnLocation,
+        userId: this._id,
+      };
   
-    // Wywołaj funkcję tworzenia rezerwacji w serwisie
-    this.reservationService.createReservation(reservation).subscribe((response) => {
-      console.log(response);
-      // Tutaj możesz dodać przekierowanie lub inne działania po utworzeniu rezerwacji
+      // Wywołaj funkcję tworzenia rezerwacji w serwisie
+      this.reservationService.createReservation(reservation as Reservation).subscribe((response) => {
+        console.log(response);
+        // Tutaj możesz dodać przekierowanie lub inne działania po utworzeniu rezerwacji
+      });
     });
   }
+  
 }

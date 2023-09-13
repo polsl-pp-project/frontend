@@ -14,6 +14,7 @@ import { ReserveCarComponent } from './components/reserve-car/reserve-car.compon
 import { ReservationConfirmationComponent } from './pages/reservation-confirmation/reservation-confirmation/reservation-confirmation.component';
 import { ManageReservationsComponent } from './pages/manage-reservations/manage-reservations/manage-reservations.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page/contact-page.component';
+import { ManageAllReservationsComponent } from './pages/manage-all-reservations/manage-all-reservations/manage-all-reservations.component';
 
 const routes: Routes = [
   { path: 'home', component: MainPageComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'reserve', component: ReserveCarComponent},
   { path: 'confirmation', component: ReservationConfirmationComponent},
   { path: 'user-reservations', component:ManageReservationsComponent},
-  { path: 'contact', component: ContactPageComponent}
+  { path: 'contact', component: ContactPageComponent},
+  { path: 'all-reservations', component: ManageAllReservationsComponent}
 ];
 
 @NgModule({

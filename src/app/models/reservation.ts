@@ -1,5 +1,5 @@
 export interface Reservation {
-    customId?: string;
+    customId?: string | undefined;
     startDate?: Date | any;
     endDate?: Date | any;
     carNumber?: number;
@@ -7,4 +7,5 @@ export interface Reservation {
     startPlace?: string;
     endPlace?: string;
     price?: number;
+    _id: string;
 }
